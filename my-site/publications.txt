@@ -1,0 +1,97 @@
+      /* PUBLICATIONS */
+  .pubs-list { display: flex; flex-direction: column; }
+  .pub-item {
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--soft);
+  }
+  .pub-item:last-child { border-bottom: 1px solid var(--soft); }
+  .pub-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  .pub-meta {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--mid);
+    letter-spacing: 0.04em;
+  }
+  .pub-meta .venue { color: var(--accent); }
+
+  /* RESUME */
+  #resume { min-height: auto; }
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .resume-embed {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid var(--soft);
+    background: var(--soft);
+  }
+  .resume-fallback {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid var(--soft);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #f5f3f0;
+  }
+  .resume-fallback-text {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+  }
+    
+    
+    const publications = [
+  {
+    title: "Missing Data Imputation for Longitudinal Glaucoma Research: A Comparison of FIML, GAIN, MIWAE, and Transformer-Based Approaches",
+    venue: "Under Review",
+    year: "2025",
+  },
+  {
+    title: "Deep Kernel Learning for Glaucoma Progression Prediction Using Multi-Architecture Neural Networks",
+    venue: "In Preparation",
+    year: "2025",
+  },
+  {
+    title: "Support Needs in Dementia Caregiving Across Age Groups: A Statistical Analysis",
+    venue: "UVA Data Science Collaborative",
+    year: "2024",
+  },
+];
+    
+      <li><a href="#publications">Publications</a></li>
+
+
+
+
+
+    
+      {/* PUBLICATIONS */}
+      <section id="publications">
+        <FadeIn>
+          <div className="section-label">Publications</div>
+        </FadeIn>
+        <div className="pubs-list">
+          {publications.map((pub, i) => (
+            <FadeIn key={pub.title} delay={i * 80}>
+              <div className="pub-item">
+                <div className="pub-title">{pub.title}</div>
+                <div className="pub-meta">
+                  <span className="venue">{pub.venue}</span> · {pub.year}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
